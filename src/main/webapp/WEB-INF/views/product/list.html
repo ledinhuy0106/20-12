@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/products/create">Thêm sản phẩm</a>
+
+<form action="/products/list">
+    <input type="text" name="key">
+    <button>Tìm</button>
+</form>
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tboydy>
+        <th:block th:each="product : ${products}">
+            <tr>
+                <td th:text="${product.getId}"></td>
+                <td th:text="${product.getName}"></td>
+                <td th:if="${product.getPrice()}"></td>
+            </tr>
+        </th:block>
+    </tboydy>
+</table>
+</body>
+</html>
