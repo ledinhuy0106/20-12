@@ -20,13 +20,13 @@ public class ProductController {
 
     @GetMapping("/list")
     public String showList(Model model, String key) {
-        List<Product> productList ;
+        List<Product> productList;
 
         if (key == null) {
 
             productList = (List<Product>) productService.findAll();
         } else {
-            productList= productService.findByName(key);
+            productList = productService.findByName(key);
 
         }
         model.addAttribute("products", productList);
@@ -35,17 +35,21 @@ public class ProductController {
     }
 
     @GetMapping("/create")
-    public ModelAndView showFormCreate() {
-        ModelAndView modelAndView = new ModelAndView("/product/create");
-        return modelAndView;
+    public String showFormCreate() {
+        return "/product/create";
     }
 
     @PostMapping("/create")
     public String create(Product product) {
-        ModelAndView modelAndView = new ModelAndView("/product/create");
-        productService.save(product);
+       productService.save(product);
         return "/product/list";
     }
 
-
+    @GetMapping("sort")
+    public String showSort(Model model) {
+        List<Product> productList;
+        productList = (List<Product>) productService.findByOrderPrice();
+        model.addAttribute("product", productList);
+        return "/product/list";
+    }
 }

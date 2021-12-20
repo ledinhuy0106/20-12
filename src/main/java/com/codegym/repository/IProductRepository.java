@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IProductRepository extends CrudRepository<Product, Long> {
   Iterable<Product> findByName(String name);
-  Iterable<Product> findByOrderPrice(int price);
+
+  Iterable<Product> findByOrderPrice();
 }
