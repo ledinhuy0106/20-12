@@ -22,6 +22,7 @@
         <th>#</th>
         <th>Name</th>
         <th>Price</th>
+        <th>img</th>
     </tr>
     </thead>
     <tboydy>
@@ -30,6 +31,7 @@
                 <td th:text="${product.getId}"></td>
                 <td th:text="${product.getName}"></td>
                 <td th:if="${product.getPrice()}"></td>
+                <td ><img th:src="@{'/uy/'+ ${product.getImage()}}"alt=""></td>
             </tr>
         </th:block>
     </tboydy>

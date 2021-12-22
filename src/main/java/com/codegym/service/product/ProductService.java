@@ -42,6 +42,6 @@ public class ProductService implements IProductService {
 
     @Override
     public Iterable<Product> findByOrderPrice() {
-        return iProductRepository.findByOrderPrice();
+        return iProductRepository.findByOrderByPrice();
     }
 }

@@ -9,13 +9,23 @@
 <p>
     <a href="/customers">Product list</a>
 </p>
-<form action="" method="post">
+
+
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        <label>Image</label>
+        <input type="file" name="image"/>
+    </div>
     <table>
         <tr>
-            <td><input type="text" name="name"/></td>
+            <td><label>
+                <input type="text" name="name"/>
+            </label></td>
         </tr>
         <tr>
-            <td><input type="text" name="price"/></td>
+            <td><label>
+                <input type="text" name="price"/>
+            </label></td>
         </tr>
         <tr>
             <td><input type="submit" value="Create Product"></td>
